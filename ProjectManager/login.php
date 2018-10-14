@@ -1,4 +1,5 @@
 <?php
+//login.php - ProjectManager version 0.1
 	include 'connect.php';
 	if(isset($_POST['login'])){
 		$uname = $_POST['uname'];
