@@ -15,7 +15,6 @@
 			header("Location:error.php");
 		}
 		else{
-			die("Hello");/*
 			$_SESSION['name']=$_POST['uname'];
 			if(isset($_COOKIE['language'])){
 				$language=$_COOKIE['language'];
@@ -34,8 +33,7 @@
 				}
 			}
 			else{
-				die("An unknown error occured");
-				//$host=$_SERVER['HTTP_HOST'];
+				$host=$_SERVER['HTTP_HOST'];
 				$uri=rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
 				echo '$uri';
 
@@ -52,8 +50,8 @@
 				else{
 					die("An unknown error has occured on login.php, line 50");
 				}
-				header("Location: http://localhost".$redirect);
+				header("Location: http://".$host$redirect);
 			}
-		*/}
+		}
 	}
 ?>
