@@ -1,5 +1,5 @@
 <?php
-//login.php - ProjectManager version 0.1
+//login.php - ProjectManager version 0.1.2
 	include 'connect.php';
 	if(isset($_POST['login'])){
 		$uname = $_POST['uname'];
@@ -51,7 +51,7 @@
 				else{
 					die("An unknown error has occured on login.php, line 50");
 				}
-				header("Location: http://".$host$redirect);
+				header("Location: http:\/\/".$host$redirect);
 			}
 		}
 	}
