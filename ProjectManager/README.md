@@ -13,3 +13,8 @@ login.php - Does not redirect to any page when isset($_COOKIE['language'])==true
 ANNOUNCEMENTS:
 
 login.php - The program has some die() functions to realize where the program arrives without entering into any error. (VERSION 0.0.1)
+
+
+LATEST COMMITS:
+
+login.php (Version 0.1.2) - Added "\/\/" string to the header() function
