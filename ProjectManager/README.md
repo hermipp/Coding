@@ -17,4 +17,5 @@ login.php - The program has some die() functions to realize where the program ar
 
 LATEST COMMITS:
 
-login.php (Version 0.1.2) - Added "\/\/" string to the header() function
+login.php (Version 0.1.2) - Added "\/\/" string to the header() function at line 54
+index-eng (Version 0.1.1) - Removed "https://localhost/projectmanager/" string to avoid error with server host at lines 17-18
