@@ -16,6 +16,7 @@
 			header("Location:error.php");
 		}
 		else{
+			session_start();
 			$_SESSION['name']=$_POST['uname'];
 			if(isset($_COOKIE['language'])){
 				$language=$_COOKIE['language'];
@@ -34,9 +35,13 @@
 				}
 			}
 			else{
+				$lang=$_POST['lang'];
+				
+				header("Location: home-".$lang.".php");
+				/*
 				$host=$_SERVER['HTTP_HOST'];
 				$uri=rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
-				echo '$uri';
+				echo "$uri";
 
 				$redirect="";
 				if($uri=="/projectmanager/index-eng.php"){
@@ -52,6 +57,7 @@
 					die("An unknown error has occured on login.php, line 50");
 				}
 				header("Location: http:\/\/".$host$redirect);
+				*/
 			}
 		}
 	}
