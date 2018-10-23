@@ -1,4 +1,4 @@
-ProjectManager:
+#ProjectManager:
 
 An open-source program to manage projects and keep contact with all members of them.
 
