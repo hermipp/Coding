@@ -36,6 +36,10 @@ while index<=MAX_INDEX:
 	curr_word_end=end[index]
 	words[index].update({'w':""})
 
+	if index>0:
+		cat="c"
+		curr_cat=0
+
 	# GET WORD (FROM '^' TO '<')
 	while curr_word_index<curr_word_end:
 		if text.find("<",curr_word_index)==-1:
@@ -43,10 +47,13 @@ while index<=MAX_INDEX:
 			curr_word_index+=1
 		else:
 			break
-	while curr_word_index<curr_word_end
+	while curr_word_index<curr_word_end:
 		curr_cat+=1
 		cat.append(str(curr_cat))
 		words[index].update({cat:""})
+
+		if index>0 and curr_word_end<=curr_word_index:
+			curr_word_index+=1
 
 		while curr_word_index<curr_word_end and text.find(">",curr_word_index)==-1:
 			words[index][str(cat)].append(text[curr_word_index])
