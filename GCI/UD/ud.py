@@ -21,9 +21,10 @@ while aux<len(text):
 		aux=(text.find("^",aux))+1
 		index+=1
 		began=False
-	else:
-		MAX_INDEX = index
-		tagged.close()
+	aux+=1
+
+MAX_INDEX = index
+tagged.close()
 
 words = [dict() for i in range(MAX_INDEX+1)]
 curr_cat = 0
@@ -42,21 +43,22 @@ while index<=MAX_INDEX:
 
 	# GET WORD (FROM '^' TO '<')
 	while curr_word_index<curr_word_end:
-		if text.find("<",curr_word_index,curr_word_index)==-1:
-			words[index]['w'].append(text[curr_word_index])
+		if text.find("<",curr_word_index-1,curr_word_index-1)==1:
+			words[index]['w']+=str(text[curr_word_index])
 			curr_word_index+=1
 		else:
 			break
 	while curr_word_index<curr_word_end:
 		curr_cat+=1
-		cat.append(str(curr_cat))
+		cat+=str(curr_cat)
 		words[index].update({cat:""})
 
-		if index>0 and curr_word_end<=curr_word_index:
-			curr_word_index+=1
-
 		while curr_word_index<curr_word_end and text.find(">",curr_word_index,curr_word_index)==-1:
-			words[index][str(cat)].append(text[curr_word_index])
+			words[index][str(cat)]+=str(text[curr_word_index])
+
+		if index>=0 and curr_word_end<=curr_word_index:
+			curr_word_index+=1
+	index+=1
 
 for i in range(MAX_INDEX+1):
 	print(words[i])
