@@ -1,6 +1,7 @@
 # ProjectManager:
 
 An open-source program to manage projects and keep contact with all members of them.
+proshare.x10host.com
 
 
 ### ISSUES/ERRORS:
